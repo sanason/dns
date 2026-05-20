@@ -336,13 +336,13 @@ resource "aws_route53_record" "datagov_admincatalogadmincatalogbspdatagov_cname"
 }
 
 
-resource "aws_route53_record" "datagov_catalogd2s65feajdp88kcloudfrontnet_cname" {
+resource "aws_route53_record" "datagov_catalogdatagovexternaldomainsproductioncloudgov_cname" {
   zone_id = aws_route53_zone.datagov_zone.zone_id
   name    = "catalog"
   type    = "CNAME"
 
   ttl     = 300
-  records = ["d2s65feajdp88k.cloudfront.net"]
+  records = ["catalog.data.gov.external-domains-production.cloud.gov."]
 
 }
 
@@ -397,7 +397,7 @@ resource "aws_route53_record" "datagov_harvestdatagovexternaldomainsproductioncl
   type    = "CNAME"
 
   ttl     = 300
-  records = ["d3g5uufc50sfwz.cloudfront.net"]
+  records = ["harvest.data.gov.external-domains-production.cloud.gov."]
 
 }
 
