@@ -486,37 +486,6 @@ resource "aws_route53_record" "_acme-challenge_demo_pra_digital_gov_cname" {
 # A simple, flexible, and convenient way to collect customer feedback.
 # Contact feedback-analytics@gsa.gov or digitalgov@gsa.gov
 
-# DEMO Touchpoints Site / Federalist / demo.touchpoints.digital.gov — A
-resource "aws_route53_record" "demo_touchpoints_digital_gov_a" {
-  zone_id = aws_route53_zone.digital_toplevel.zone_id
-  name    = "demo.touchpoints.digital.gov."
-  type    = "A"
-  alias {
-    name                   = "dcxk3q3d8gzx7.cloudfront.net."
-    zone_id                = local.cloudfront_zone_id
-    evaluate_target_health = false
-  }
-}
-
-resource "aws_route53_record" "demo_touchpoints_digital_gov_aaaa" {
-  zone_id = aws_route53_zone.digital_toplevel.zone_id
-  name    = "demo.touchpoints.digital.gov."
-  type    = "AAAA"
-  alias {
-    name                   = "dcxk3q3d8gzx7.cloudfront.net."
-    zone_id                = local.cloudfront_zone_id
-    evaluate_target_health = false
-  }
-}
-
-resource "aws_route53_record" "_acme-challenge_demo_touchpoints_digital_gov_cname" {
-  zone_id = aws_route53_zone.digital_toplevel.zone_id
-  name    = "_acme-challenge.demo.touchpoints.digital.gov."
-  type    = "CNAME"
-  ttl     = 300
-  records = ["_acme-challenge.demo.touchpoints.digital.gov.external-domains-production.cloud.gov."]
-}
-
 # DEMO Touchpoints APP / Amazon SES Verification TXT Record
 # demo.touchpoints.digital.gov
 resource "aws_route53_record" "demo_touchpoints_digital_gov_verification_txt" {
